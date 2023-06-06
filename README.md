@@ -10,3 +10,7 @@ The key file enabling these actions is `.github/workflows/cml.yaml`.
 ## Secrets and environmental variables
 The only environmental variable set in `.github/workflows/cml.yaml` is `GITHUB_TOKEN`, which is configured by default in every GitHub repository. No secrets must be set by the user. 
 
+However, the permission scope of `GITHUB_TOKEN` is configured within the repository settings under the Actions tab (and appears to be set very conservatively when a repository is forked).  See https://github.com/iterative/cml/issues/595#issuecomment-1125080396
+
+## Forks
+Note that when you fork the repository, you have to enable GitHub Actions in the Actions tab of the repo

@@ -4,6 +4,9 @@ jobs:
   train-model:
     runs-on: ubuntu-latest
     steps:
+      - uses: actions/setup-node@v1
+        with:
+          node-version: '16'
       - uses: actions/checkout@v3
         with:
           ref: ${{ github.event.pull_request.head.sha }}
@@ -19,4 +22,4 @@ jobs:
           python train.py
 
           # Create CML report
-          cml comment create --pr --publish metrics.txt
+          cml comment create --target=pr --publish metrics.txt
